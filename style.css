@@ -1,0 +1,187 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --violet-color: hsl(263, 55%, 52%);
+    --grayish-blue: hsl(217, 19%, 35%);
+    --blackish-blue-color: hsl(219, 29%, 14%);
+    --white-color: hsl(0, 0%, 100%);
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Barlow+Semi+Condensed", sans-serif;
+    background-color: hsl(210, 46%, 95%);
+
+}
+
+.main-section {
+    padding: 5%;  
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 2rem; 
+    align-items: stretch;
+  
+}
+.logo{
+    width: 5rem;
+    height: 5rem;
+}
+
+.card-1 {
+    grid-column: span 2; /* карточка будет занимать 2 колонки */
+    grid-row: 1 / 2; /* первая строка */
+    color: rgb(213, 212, 212);
+    background: var(--violet-color);
+    background-image: url(images/bg-pattern-quotation.svg); 
+    background-repeat: no-repeat; 
+    background-position:  calc(100% - 8rem) 0; 
+   
+}
+
+.card-2 {
+    grid-column: 3 / 4; /* третья колонка */
+    grid-row: 1 / 2; /* первая строка */
+    background-color: var(--grayish-blue);
+    color: rgb(213, 212, 212);
+}
+
+.card-3 {
+    grid-column: 4 / 5; /* четвертая колонка */
+    grid-row: 1 / 3; /* карточка будет на две строки */
+    background-color: var(--white-color);
+    color: rgb(73, 73, 73);
+
+}
+
+.card-4 {
+    grid-column: 1 / 2; /* первая колонка */
+    grid-row: 2 / 3; /* вторая строка */
+    background-color: var(--white-color);
+    color: rgb(73, 73, 73);
+}
+
+.card-5 {
+    grid-column: 2 / 4; /* две колонки во второй строке */
+    grid-row: 2 / 3;
+    background-color: var(--blackish-blue-color);
+    color: rgb(213, 212, 212);
+}
+
+
+.box-user{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.photo{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+    border-radius: 100rem;
+    margin-bottom: 1rem;
+}
+
+.name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+}
+
+.position{
+    font-size: 1rem;
+    opacity: 0.7; /* Уменьшение яркости текста */
+}
+
+.title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.text{
+    font-size: 1.2rem;
+    font-weight: 500; 
+    line-height: 1.4;
+    opacity: 0.7; 
+}
+
+.section-attribution{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 53%;
+    }
+    .cards-grid {
+        grid-gap: 1rem; 
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 45%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+    .main-section {
+       display: flex;
+       justify-content: center;
+    }
+    html {
+        font-size: 70%;
+    }
+    .cards-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card {
+        width: 90%; 
+        min-height: 12rem;
+        
+        padding: 2rem; 
+    }
+    .card:nth-child(3) {
+        order: 2; 
+    }
+    
+    .card:nth-child(5) {
+        order: 1; 
+    }
+
+    
+}
